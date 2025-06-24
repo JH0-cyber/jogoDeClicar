@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DE CLICAR </title>
+    <style>
+        .ClicksValor , p  {
+            color: white;
+        }
+        body {
+            text-align: center;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="ClicksValor">Quantidade de Clicks: 0</p>
+    <button class="clicar">Clicar</button>
+    <p>&copy Quetapiton, todos os direitos reservados </p>
+
+    <script>
+        let buttonclick = document.getElementsByClassName("clicar")[0];
+        let clicks = 0;
+        let textClicksValor = document.getElementsByClassName("ClicksValor")[0];
+
+        function adicionar(quantidade) {
+            // Aumenta o valor de quantidade se já passou de 10 cliques
+            if (clicks >= 10) {
+                quantidade += 10;
+            }
+
+            clicks += quantidade;
+            textClicksValor.innerHTML = "Quantidade de Clicks: " + clicks;
+        }
+
+        buttonclick.addEventListener("click", function () {
+            adicionar(1);
+        });
+    </script>
+</body>
+</html>
