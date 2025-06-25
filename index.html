@@ -22,9 +22,11 @@
 
     <p class="ClicksValor">Quantidade de Clicks: 0</p>
     <button class="clicar">Clicar</button>
+    <p id="upgradeNivel">Nivel do Upgrade: </p>
     <p>&copy Quetapiton, todos os direitos reservados </p>
 
     <script>
+        let upgradeText = document.getElementById("upgradeNIvel")
         let buttonclick = document.getElementsByClassName("clicar")[0];
         let clicks = 0;
         let textClicksValor = document.getElementsByClassName("ClicksValor")[0];
@@ -34,8 +36,11 @@
             if (clicks >= 10) {
                 quantidade += 10;
             }
+            if (quantidade >= 10 && clicks = 20){
+                upgradeText.innerHTML = "Nivel do Upgrade: 1"
+            }
 
-            clicks += quantidade;
+            clicks + quantidade;
             textClicksValor.innerHTML = "Quantidade de Clicks: " + clicks;
         }
 
