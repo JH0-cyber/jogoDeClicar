@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOGO DE CLICAR | Jogos Web</title>
-        <meta name="description" content="Jogo Clicker Grátis direto no navegador! Desbloqueie melhorias e muitos mais!">
+    <meta name="description" content="Jogo Clicker Grátis direto no navegador! Desbloqueie melhorias e muitos mais!">
     <meta name="google-site-verification" content="o_aVmUDkSyQXwdgCbuCbFCX8AOWVrP4kBclQrkIrAsw" />
-    <meta name="keyworks" content="Jogos de Navegador, Jogo Clicker, jogos quetapiton , jogos do quetapiton">
-    <meta name-"author" content="Quetapito">
+    <meta name="keywords" content="Jogos de Navegador, Jogo Clicker, jogos quetapiton , jogos do quetapiton">
+    <meta name="author" content="Quetapito">
     <style>
-        .ClicksValor , p  {
+        .ClicksValor, p {
             color: white;
         }
         body {
             text-align: center;
             background-color: blue;
+            font-family: sans-serif;
         }
     </style>
 </head>
@@ -22,26 +23,28 @@
 
     <p class="ClicksValor">Quantidade de Clicks: 0</p>
     <button class="clicar">Clicar</button>
-    <p id="upgradeNivel">Nivel do Upgrade: </p>
-    <p>&copy Quetapiton, todos os direitos reservados </p>
+    <p id="upgradeNivel">Nivel do Upgrade: 0</p>
+    <p>&copy; Quetapiton, todos os direitos reservados</p>
 
     <script>
-        let upgradeText = document.getElementById("upgradeNIvel")
+        let upgradeText = document.getElementById("upgradeNivel");
         let buttonclick = document.getElementsByClassName("clicar")[0];
         let clicks = 0;
         let textClicksValor = document.getElementsByClassName("ClicksValor")[0];
 
         function adicionar(quantidade) {
-            // Aumenta o valor de quantidade se já passou de 10 cliques
+            // Aumenta a quantidade se já passou de 10 cliques
             if (clicks >= 10) {
                 quantidade += 10;
             }
-            if (quantidade >= 10 && clicks = 20){
-                upgradeText.innerHTML = "Nivel do Upgrade: 1"
-            }
 
-            clicks + quantidade;
+            clicks += quantidade;
             textClicksValor.innerHTML = "Quantidade de Clicks: " + clicks;
+
+            // Atualiza o nível de upgrade
+            if (clicks >= 20) {
+                upgradeText.innerHTML = "Nivel do Upgrade: 1";
+            }
         }
 
         buttonclick.addEventListener("click", function () {
